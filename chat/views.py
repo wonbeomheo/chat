@@ -1,12 +1,8 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.utils import timezone
 
 from django.db.models.signals import post_save
-from django.dispatch import receiver, Signal
-from .models import Message, Room
-
-import time
+from .models import Message
 
 
 # Create your views here.
