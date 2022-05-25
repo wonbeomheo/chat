@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Room List</title>
+</head>
+<body>
+  What chat room would you like to enter?<br>
+  {% for room in rooms %}
+    <a href="chat/{{ room.number }}/"></a>
+  {% endfor %}
+</body>
+</html>

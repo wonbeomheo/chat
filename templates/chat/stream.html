@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="log"></div>
+</body>
+<script>
+  window.onload = function() {
+    let evtSource = new EventSource("{% url 'chat:room' %}");
+    let eventList = document.getElementById("log");
+
+    evtSource.onmessage = function(e) {
+      console.log(e);
+      let newElement = document.createElement("li");
+
+      newElement.innerHTML = "message: " + e.data;
+      eventList.appendChild(newElement);
+    };
+  }
+</script>
+</html>

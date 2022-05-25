@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block signup %}
+  <form action="{% url 'users:signup' %}" method="POST">
+    {% csrf_token %}
+    <div>
+      <label for="username">Username: </label>
+      <input type="text" name="username">
+    </div>
+    <div>
+      <label for="email">Email: </label>
+      <input type="email" name="email">
+    </div>
+    <div>
+      <label for="password">Password: </label>
+      <input type="password" name="password">
+    </div>
+    <div>
+      <label for="re-password">Password Check: </label>
+      <input type="password" name="re-password">
+    </div>
+    <button type="submit">Sign Up</button>
+  </form>
+{% endblock %}

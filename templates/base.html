@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home | Hyper</title>
+</head>
+<body>
+  <h5>Welcome! {{ message }}</h5>
+  <hr>
+  {% if user.is_authenticated %}
+    <button><a href="{% url 'users:signout' %}">Sign Out</a></button>
+    <button><a href="">Join Chat</a></button>
+  {% else %}
+    <button><a href="{% url 'users:signin' %}">Log In</a></button>
+    <button><a href="{% url 'users:signup' %}">Sign Up</a></button>
+    {% block login %}{% endblock %}
+    {% block signup %}{% endblock %}
+  {% endif %}
+
+</body>
+</html>
